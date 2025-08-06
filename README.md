@@ -8,6 +8,10 @@ Shooting video with a handheld mobile phone, the most common photographic device
 
 Code is coming soon.
 
+## 🧩 Pipeline
+
+![SelfHVD Pipeline](figs/pipeline.png)
+
 ## 📄 Citation
 
 If you find this work useful, please cite our paper:
