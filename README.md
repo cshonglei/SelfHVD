@@ -10,7 +10,7 @@ Code is coming soon.
 
 ## 🧩 Pipeline
 
-<img src="images/pipeline.png" alt="SelfHVD Pipeline" width="800"/>
+![image](https://github.com/cshonglei/SelfHVD/blob/main/images/pipeline.png)
 
 ## 📄 Citation
 
