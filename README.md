@@ -1,6 +1,6 @@
 # SelfHVD: Self-Supervised Handheld Video Deblurring for Mobile Phones
 
-[![arXiv](https://img.shields.io/badge/arXiv-2505.08605.svg)](http://arxiv.org/abs/2508.08605.pdf)
+[![arXiv](https://img.shields.io/badge/arXiv-2505.08605-b10.svg)](http://arxiv.org/abs/2508.08605.pdf)
 
 ## 🧾 Abstract
 
