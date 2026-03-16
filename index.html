@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SelfHVD: Self-Supervised Handheld Video Deblurring</title>
+  <meta name="description" content="Project page for SelfHVD: Self-Supervised Handheld Video Deblurring" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Inter', Arial, Helvetica, sans-serif;
+      background: #f0f0f0;
+      color: #374151;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .hero-wrap {
+      background: #f3f3f3;
+      padding: 18px 20px 52px;
+    }
+
+    .hero {
+      max-width: 860px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .title {
+      margin: 0;
+      font-size: 28px;
+      line-height: 1.08;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: #2f3743;
+    }
+
+    .authors {
+      margin-top: 20px;
+      font-size: 16px;
+      line-height: 1.45;
+      font-weight: 400;
+      color: #2f9bff;
+    }
+
+    .authors a {
+      color: #2f9bff;
+      text-decoration: none;
+    }
+
+    .authors sup,
+    .affiliation sup {
+      font-size: 70%;
+      vertical-align: super;
+    }
+
+    .authors sup { color: #2f3743; }
+
+    .affiliation {
+      margin-top: 2px;
+      font-size: 15px;
+      line-height: 1.5;
+      color: #4b5563;
+      font-weight: 400;
+    }
+
+    .buttons {
+      margin-top: 14px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      height: 34px;
+      padding: 0 15px;
+      border-radius: 999px;
+      text-decoration: none;
+      background: #333;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 500;
+      transition: transform .15s ease, background .15s ease;
+    }
+
+    .btn:hover {
+      background: #262626;
+      transform: translateY(-1px);
+    }
+
+    .btn i, .btn .emoji {
+      font-size: 13px;
+      line-height: 1;
+    }
+
+    .abstract-wrap {
+      background: #ececec;
+      padding: 64px 20px 80px;
+      border-top: 1px solid rgba(0,0,0,0.02);
+    }
+
+    .abstract {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .abstract h2,
+    .bibtex h2 {
+      margin: 0 0 18px;
+      text-align: center;
+      font-size: 24px;
+      line-height: 1.15;
+      font-weight: 600;
+      color: #3b4654;
+    }
+
+    .abstract p {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.72;
+      color: #4b5563;
+      text-align: left;
+    }
+
+    .bibtex-wrap {
+      background: #f3f3f3;
+      padding: 40px 20px 70px;
+    }
+
+    .bibtex {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    pre {
+      margin: 0;
+      padding: 18px 20px;
+      border-radius: 8px;
+      background: #2e3440;
+      color: #f3f4f6;
+      overflow-x: auto;
+      font-size: 14px;
+      line-height: 1.6;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.05);
+    }
+
+    @media (max-width: 768px) {
+      .hero-wrap { padding: 20px 14px 42px; }
+      .title { font-size: 22px; }
+      .authors { font-size: 15px; }
+      .affiliation { font-size: 14px; }
+      .abstract-wrap { padding: 50px 16px 64px; }
+      .bibtex-wrap { padding: 28px 16px 56px; }
+      .abstract h2, .bibtex h2 { font-size: 22px; }
+      .abstract p { font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero-wrap">
+    <div class="hero">
+      <h1 class="title">SelfHVD: Self-Supervised Handheld Video Deblurring</h1>
+
+      <div class="authors">
+        <a href="mailto:cshongleixu@gmail.com">Honglei Xu</a>,
+        <a href="mailto:cszlzhang@outlook.com">Zhilu Zhang</a>,
+        <a href="mailto:zhou93108@gmail.com">Junjie Fan</a>,
+        <a href="mailto:csxhwu@gmail.com">Xiaohe Wu</a>,
+        <a href="mailto:wmzuo@hit.edu.cn">Wangmeng Zuo</a>
+      </div>
+
+      <div class="affiliation">Harbin Institute of Technology</div>
+
+      
+      <div class="buttons">
+        <a class="btn" href="https://arxiv.org/abs/2508.08605" target="_blank" rel="noopener noreferrer">
+          <i class="fa-solid fa-wand-magic-sparkles"></i><span>arXiv</span>
+        </a>
+        <a class="btn" href="https://arxiv.org/pdf/2508.08605.pdf" target="_blank" rel="noopener noreferrer">
+          <i class="fa-regular fa-file-pdf"></i><span>Paper</span>
+        </a>
+        <a class="btn" href="https://arxiv.org/pdf/2508.08605.pdf" target="_blank" rel="noopener noreferrer">
+          <i class="fa-regular fa-file-pdf"></i><span>Supp</span>
+        </a>
+        <a class="btn" href="https://github.com/cshonglei/SelfHVD" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-github"></i><span>Code</span>
+        </a>
+        <a class="btn" href="#bibtex">
+          <span class="emoji">📖</span><span>BibTeX</span>
+        </a>
+      </div>
+    </div>
+  </section>
+<section class="abstract-wrap">
+    <div class="abstract">
+      <h2>Abstract</h2>
+      <p>
+        Shooting video with handheld shooting devices often results in blurry frames due to shaking hands and other instability factors. Although previous video deblurring methods have achieved impressive progress, they still struggle to perform satisfactorily on real-world handheld video due to the blur domain gap between training and testing data. To address the issue, we propose a self-supervised method for handheld video deblurring, which is driven by sharp clues in the video. First, to train the deblurring model, we extract the sharp clues from the video and take them as misalignment labels of neighboring blurry frames. Second, to improve the deblurring ability of the model, we propose a novel Self-Enhanced Video Deblurring (SEVD) method to create higher-quality paired video data. Third, we propose a Self-Constrained Spatial Consistency Maintenance (SCSCM) method to regularize the model, preventing position shifts between the output and input frames. Moreover, we construct synthetic and real-world handheld video datasets for handheld video deblurring. Extensive experiments on these and other common real-world datasets demonstrate that our method significantly outperforms existing self-supervised ones.
+      </p>
+    </div>
+  </section>
+
+  <section class="bibtex-wrap" id="bibtex">
+    <div class="bibtex">
+      <h2>BibTeX</h2>
+      <pre>@article{xu2025selfhvd,
+  title   = {SelfHVD: Self-Supervised Handheld Video Deblurring for Mobile Phones},
+  author  = {Xu, Honglei and Zhang, Zhilu and Fan, Junjie and Wu, Xiaohe and Zuo, Wangmeng},
+  journal = {arXiv preprint arXiv:2508.08605},
+  year    = {2025}
+}</pre>
+    </div>
+  </section>
+</body>
+</html>
+
+
