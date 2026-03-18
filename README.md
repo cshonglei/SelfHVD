@@ -19,9 +19,9 @@ Code is coming soon.
 If you find this work useful, please cite our paper:
 
 ```bibtex
-@article{SelfHVD,
+@inproceedings{SelfHVD,
   title={SelfHVD: Self-Supervised Handheld Video Deblurring},
   author={Xu, Honglei and Zhang, Zhilu and Fan, Junjie and Wu, Xiaohe and Zuo, Wangmeng},
-  journal={cvpr},
+  booktitle={CVPR},
   year={2026}
 }
