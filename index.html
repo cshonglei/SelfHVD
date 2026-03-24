@@ -34,7 +34,7 @@
 
     .title {
       margin: 0;
-      font-size: 28px;
+      font-size: 30px;
       line-height: 1.08;
       font-weight: 700;
       letter-spacing: -0.03em;
@@ -105,20 +105,20 @@
 
     .abstract-wrap {
       background: #ececec;
-      padding: 64px 20px 80px;
+      padding: 28px 20px 32px;
       border-top: 1px solid rgba(0,0,0,0.02);
     }
 
     .abstract {
-      max-width: 720px;
+      max-width: 1280px;
       margin: 0 auto;
     }
 
     .abstract h2,
     .bibtex h2 {
-      margin: 0 0 18px;
+      margin: 0 0 12px;
       text-align: center;
-      font-size: 24px;
+      font-size: 28px;
       line-height: 1.15;
       font-weight: 600;
       color: #3b4654;
@@ -132,13 +132,161 @@
       text-align: left;
     }
 
+    .overview-wrap {
+      background: #f3f3f3;
+      padding: 20px 20px 30px;
+      border-top: 1px solid rgba(0,0,0,0.02);
+    }
+
+    .overview {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .overview h2 {
+      margin: 0 0 12px;
+      text-align: center;
+      font-size: 28px;
+      line-height: 1.15;
+      font-weight: 600;
+      color: #3b4654;
+    }
+
+    .overview-figure {
+      margin-top: 8px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .overview-figure img {
+      width: min(1280px, 100%);
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.10);
+      background: #f8fafc;
+    }
+
+    .overview-caption {
+      margin: 10px auto 0;
+      max-width: 1280px;
+      font-size: 14px;
+      line-height: 1.7;
+      color: #4b5563;
+      text-align: left;
+    }
+
+    .datasets-wrap {
+      background: #f3f3f3;
+      padding: 20px 20px 30px;
+      border-top: 1px solid rgba(0,0,0,0.02);
+    }
+
+    .datasets {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .datasets h2 {
+      margin: 0 0 12px;
+      text-align: center;
+      font-size: 28px;
+      line-height: 1.15;
+      font-weight: 600;
+      color: #3b4654;
+    }
+
+    .datasets p {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.72;
+      color: #4b5563;
+      text-align: left;
+    }
+
+    .datasets-figure {
+      margin-top: 8px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .datasets-figure img {
+      width: min(1280px, 100%);
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.10);
+      background: #f8fafc;
+    }
+
+    .datasets-caption {
+      margin: 10px auto 0;
+      max-width: 1280px;
+      font-size: 14px;
+      line-height: 1.7;
+      color: #4b5563;
+      text-align: left;
+    }
+
+    .visualization-wrap {
+      background: #f3f3f3;
+      padding: 20px 20px 30px;
+      border-top: 1px solid rgba(0,0,0,0.02);
+    }
+
+    .visualization {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .visualization h2 {
+      margin: 0 0 12px;
+      text-align: center;
+      font-size: 28px;
+      line-height: 1.15;
+      font-weight: 600;
+      color: #3b4654;
+    }
+
+    .visualization-figure {
+      margin-top: 8px;
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      flex-wrap: wrap;
+    }
+
+    .visualization-figure video {
+      width: min(1280px, 100%);
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.10);
+      background: #f8fafc;
+    }
+
+    .visualization-item {
+      width: min(1280px, 100%);
+    }
+
+    .compare-labels {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin: 0 0 8px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #3b4654;
+    }
+
+    .compare-labels span {
+      text-align: center;
+    }
+
     .bibtex-wrap {
       background: #f3f3f3;
-      padding: 40px 20px 70px;
+      padding: 20px 20px 30px;
     }
 
     .bibtex {
-      max-width: 720px;
+      max-width: 800px;
       margin: 0 auto;
     }
 
@@ -156,13 +304,24 @@
 
     @media (max-width: 768px) {
       .hero-wrap { padding: 20px 14px 42px; }
-      .title { font-size: 22px; }
+      .title { font-size: 24px; }
       .authors { font-size: 15px; }
       .affiliation { font-size: 14px; }
-      .abstract-wrap { padding: 50px 16px 64px; }
-      .bibtex-wrap { padding: 28px 16px 56px; }
-      .abstract h2, .bibtex h2 { font-size: 22px; }
+      .abstract-wrap { padding: 24px 16px 30px; }
+      .overview-wrap { padding: 18px 16px 28px; }
+      .datasets-wrap { padding: 18px 16px 28px; }
+      .bibtex-wrap { padding: 18px 16px 28px; }
+      .abstract h2, .bibtex h2 { font-size: 28px; }
       .abstract p { font-size: 14px; }
+      .overview h2 { font-size: 28px; }
+      .datasets h2 { font-size: 28px; }
+      .datasets p { font-size: 14px; }
+      .datasets-caption { font-size: 14px; }
+      .visualization-wrap { padding: 18px 16px 28px; }
+      .visualization h2 { font-size: 28px; }
+      .visualization-figure { flex-wrap: wrap; }
+      .visualization-figure video { width: 100%; max-width: 100%; }
+      .compare-labels { font-size: 14px; }
     }
   </style>
 </head>
@@ -180,6 +339,7 @@
       </div>
 
       <div class="affiliation">Harbin Institute of Technology</div>
+      <div class="affiliation">CVPR 2026</div>
 
       
       <div class="buttons">
@@ -193,7 +353,7 @@
           <i class="fa-brands fa-github"></i><span>Code</span>
         </a>
         <a class="btn" href="#bibtex">
-          <span class="emoji">📖</span><span>BibTeX</span>
+          <i class="fa-solid fa-book"></i><span>BibTeX</span>
         </a>
       </div>
     </div>
@@ -207,18 +367,73 @@
     </div>
   </section>
 
+  <section class="overview-wrap">
+    <div class="overview">
+      <h2>Overview</h2>
+      <div class="overview-figure">
+        <img src="https://github.com/cshonglei/SelfHVD/blob/main/images/pipeline.png?raw=true" alt="SelfHVD pipeline overview" loading="lazy" />
+      </div>
+      <p class="overview-caption">
+        Overview of our SelfHVD. Given a blurry video captured by a handheld shooting device, we first select the sharp frames and take them as misalignment labels. Then, Self-Enhanced Video Deblurring (SEVD) constructs higher-quality paired training data to further improve the model performance. Self-Constrained Spatial Consistency Maintenance (SCSCM) is proposed to prevent position shifts between output and input frames.
+      </p>
+    </div>
+  </section>
+
+  <section class="visualization-wrap" id="visualization">
+    <div class="visualization">
+      <h2>Visualization</h2>
+      <div class="visualization-figure">
+        <div class="visualization-item">
+          <div class="compare-labels">
+            <span>Blurry Video</span>
+            <span>SelfHVD</span>
+          </div>
+          <video controls preload="metadata">
+            <source src="Visualization/002_side_by_side.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="visualization-item">
+          <video controls preload="metadata">
+            <source src="Visualization/004_side_by_side.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="visualization-item">
+          <video controls preload="metadata">
+            <source src="Visualization/008_side_by_side.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="datasets-wrap">
+    <div class="datasets">
+      <h2>Datasets</h2>
+      <div class="datasets-figure">
+        <img src="https://github.com/cshonglei/SelfHVD/blob/main/images/A.png?raw=true" alt="Synthetic dataset GoProShake" loading="lazy" />
+      </div>
+      <p class="datasets-caption">
+        Visualization of GoProShake dataset. The top and bottom are training and test videos, respectively. GoProShake takes into account the OIS technology on handheld video capture, synthesizing blurry videos (red boxes) that contain sharp frames (green boxes).
+      </p>
+      <div class="datasets-figure">
+        <img src="https://github.com/cshonglei/SelfHVD/blob/main/images/B.png?raw=true" alt="Real-world dataset HVD" loading="lazy" />
+      </div>
+      <p class="datasets-caption">
+        Visualization of HVD dataset. Sharp frames (green boxes) are present and reliable in most cases of handheld shooting scenarios.
+      </p>
+    </div>
+  </section>
+
   <section class="bibtex-wrap" id="bibtex">
     <div class="bibtex">
       <h2>BibTeX</h2>
-      <pre>@article{xu2025selfhvd,
-  title   = {SelfHVD: Self-Supervised Handheld Video Deblurring},
-  author  = {Xu, Honglei and Zhang, Zhilu and Fan, Junjie and Wu, Xiaohe and Zuo, Wangmeng},
-  journal = {cvpr},
-  year    = {2026}
+      <pre>@inproceedings{xu2025selfhvd,
+  title={SelfHVD: Self-Supervised Handheld Video Deblurring},
+  author={Xu, Honglei and Zhang, Zhilu and Fan, Junjie and Wu, Xiaohe and Zuo, Wangmeng},
+  booktitle={CVPR},
+  year={2026}
 }</pre>
     </div>
   </section>
 </body>
 </html>
-
-
