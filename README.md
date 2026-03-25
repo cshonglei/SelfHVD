@@ -24,7 +24,7 @@ Shooting video with handheld shooting devices often results in blurry frames due
 
 ![Pipeline](https://github.com/cshonglei/SelfHVD/blob/main/images/pipeline.png?raw=true)
 
-Given a blurry video captured by a handheld shooting device, we first select the sharp frames and take them as misalignment labels. Then, SEVD constructs higher-quality paired training data to further improve the model performance. SCSCM is proposed to prevent position shifts between output and input frames.
+Overview of our SelfHVD. Given a blurry video captured by a handheld shooting device, we first select the sharp frames and take them as misalignment labels. Then, Self-Enhanced Video Deblurring (SEVD) constructs higher-quality paired training data to further improve the model performance. Self-Constrained Spatial Consistency Maintenance (SCSCM) is proposed to prevent position shifts between output and input frames.
 
 ---
 
@@ -66,7 +66,7 @@ Given a blurry video captured by a handheld shooting device, we first select the
 
 </div>
 
-GoProShake takes into account the OIS technology on handheld video capture, synthesizing blurry videos (red boxes) that contain sharp frames (green boxes). The top and bottom rows are training and test videos, respectively.
+Visualization of GoProShake dataset. The top and bottom are training and test videos, respectively. GoProShake takes into account the OIS technology on handheld video capture, synthesizing blurry videos (red boxes) that contain sharp frames (green boxes).
 
 ### HVD (Real-World) &nbsp; [[Download (Google Drive)](https://drive.google.com)]
 
@@ -76,7 +76,7 @@ GoProShake takes into account the OIS technology on handheld video capture, synt
 
 </div>
 
-HVD is a real-world handheld video dataset. Sharp frames (green boxes) are present and reliable in most handheld shooting scenarios.
+Visualization of HVD dataset. Sharp frames (green boxes) are present and reliable in most cases of handheld shooting scenarios.
 
 ---
 
