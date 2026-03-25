@@ -51,7 +51,7 @@ Shooting video with handheld shooting devices often results in blurry frames due
 
 ---
 
-## 🗂️ Datasets
+## 🖼️ Datasets
 
 We introduce two new datasets for handheld video deblurring:
 
