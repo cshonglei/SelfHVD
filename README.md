@@ -49,9 +49,9 @@ Overview of our SelfHVD. Given a blurry video captured by a handheld shooting de
 
 ## 🗄️ Datasets
 
-### GoProShake (Synthetic) &nbsp; [[Download (Google Drive)](https://drive.google.com)]
-
 <div align="center">
+
+### [GoProShake](https://drive.google.com)
 
 ![GoProShake](https://github.com/cshonglei/SelfHVD/blob/main/images/A.png?raw=true)
 
@@ -59,9 +59,9 @@ Overview of our SelfHVD. Given a blurry video captured by a handheld shooting de
 
 Visualization of GoProShake dataset. The top and bottom are training and test videos, respectively. GoProShake takes into account the OIS technology on handheld video capture, synthesizing blurry videos (red boxes) that contain sharp frames (green boxes).
 
-### HVD (Real-World) &nbsp; [[Download (Google Drive)](https://drive.google.com)]
-
 <div align="center">
+
+### [HVD](https://drive.google.com)
 
 ![HVD](https://github.com/cshonglei/SelfHVD/blob/main/images/B.png?raw=true)
 
