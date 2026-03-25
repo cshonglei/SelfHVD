@@ -70,6 +70,13 @@
       font-weight: 400;
     }
 
+    .venue-highlight {
+      color: #1d6fd0;
+      font-weight: 700;
+      font-size: 1.08em;
+      letter-spacing: 0.02em;
+    }
+
     .buttons {
       margin-top: 14px;
       display: flex;
@@ -226,6 +233,21 @@
       text-align: left;
     }
 
+    .datasets-content {
+      width: 100%;
+      max-width: 1600px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .datasets-panel {
+      width: 100%;
+    }
+
+    .datasets-panel[hidden] {
+      display: none !important;
+    }
+
     .visualization-wrap {
       background: #f3f3f3;
       padding: 20px 20px 30px;
@@ -233,8 +255,11 @@
     }
 
     .visualization {
-      max-width: 1280px;
+      max-width: 1600px;
       margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .visualization h2 {
@@ -246,17 +271,103 @@
       color: #3b4654;
     }
 
+    .viz-nav-wrap {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      max-width: 1600px;
+      margin: 0 auto 16px;
+    }
+
+    .viz-nav-row {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      gap: 0;
+    }
+
+    .viz-tab-group {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: center;
+      gap: 56px;
+      width: auto;
+    }
+
+    .viz-tab {
+      margin: 0;
+      min-width: 210px;
+      height: 44px;
+      padding: 0 22px;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      border-radius: 4px;
+      background: #ffffff;
+      box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+      color: #aeb7c7;
+      font-family: inherit;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      text-align: center;
+      transition: box-shadow 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+    }
+
+    .viz-tab:hover:not(.active) {
+      box-shadow: 0 3px 10px rgba(15, 23, 42, 0.08);
+      color: #9aa6bb;
+    }
+
+    .viz-tab.active {
+      /* Keep same box metrics to prevent layout shift */
+      min-width: 210px;
+      height: 44px;
+      padding: 0 22px;
+      background: transparent;
+      border-color: transparent;
+      box-shadow: none;
+      color: #6b7c93;
+      font-weight: 600;
+    }
+
+    .viz-content {
+      width: 100%;
+      max-width: 1600px;
+      margin: 0 auto;
+    }
+
+    .compare-labels {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      width: min(1280px, 100%);
+      margin: 0 auto 10px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #3b4654;
+    }
+
+    .compare-labels span {
+      text-align: center;
+    }
+
     .visualization-figure {
       margin-top: 8px;
       display: flex;
+      flex-direction: column;
       justify-content: center;
+      align-items: center;
       gap: 0;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
+      width: 100%;
     }
 
     .visualization-figure video {
       width: min(1280px, 100%);
       max-width: 100%;
+      display: block;
+      margin: 0 auto;
       height: auto;
       border-radius: 10px;
       box-shadow: 0 10px 28px rgba(0, 0, 0, 0.10);
@@ -265,19 +376,12 @@
 
     .visualization-item {
       width: min(1280px, 100%);
+      margin: 0 auto;
     }
 
-    .compare-labels {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      margin: 0 0 8px;
-      font-size: 16px;
-      font-weight: 600;
-      color: #3b4654;
-    }
-
-    .compare-labels span {
-      text-align: center;
+    .visualization-item.enlarged {
+      width: min(1600px, 100%);
+      margin: 0 auto;
     }
 
     .bibtex-wrap {
@@ -321,6 +425,10 @@
       .visualization h2 { font-size: 28px; }
       .visualization-figure { flex-wrap: wrap; }
       .visualization-figure video { width: 100%; max-width: 100%; }
+      .viz-nav-wrap { margin-bottom: 12px; }
+      .viz-tab-group { gap: 28px; }
+      .viz-tab { min-width: 150px; height: 40px; font-size: 14px; }
+      .viz-tab.active { min-width: 150px; height: 40px; padding: 0 22px; }
       .compare-labels { font-size: 14px; }
     }
   </style>
@@ -339,7 +447,7 @@
       </div>
 
       <div class="affiliation">Harbin Institute of Technology</div>
-      <div class="affiliation">CVPR 2026</div>
+      <div class="affiliation"><span class="venue-highlight">CVPR 2026</span></div>
 
       
       <div class="buttons">
@@ -351,6 +459,9 @@
         </a>
         <a class="btn" href="https://github.com/cshonglei/SelfHVD" target="_blank" rel="noopener noreferrer">
           <i class="fa-brands fa-github"></i><span>Code</span>
+        </a>
+        <a class="btn" href="https://github.com/cshonglei/SelfHVD" target="_blank" rel="noopener noreferrer">
+          <i class="fa-solid fa-database"></i><span>Dataset</span>
         </a>
         <a class="btn" href="#bibtex">
           <i class="fa-solid fa-book"></i><span>BibTeX</span>
@@ -382,45 +493,86 @@
   <section class="visualization-wrap" id="visualization">
     <div class="visualization">
       <h2>Visualization</h2>
-      <div class="visualization-figure">
-        <div class="visualization-item">
-          <div class="compare-labels">
-            <span>Blurry Video</span>
-            <span>SelfHVD</span>
+      <div class="viz-nav-wrap">
+        <div class="viz-nav-row">
+          <div class="viz-tab-group">
+            <button class="viz-tab active" data-target="goproshake-videos" type="button">GoProShake</button>
+            <button class="viz-tab" data-target="hvd-videos" type="button">HVD</button>
           </div>
-          <video controls preload="metadata">
-            <source src="https://cdn.jsdelivr.net/gh/cshonglei/SelfHVD@main/images/Visualization/002_side_by_side.mp4" type="video/mp4" />
-          </video>
         </div>
-        <div class="visualization-item">
-          <video controls preload="metadata">
-            <source src="https://cdn.jsdelivr.net/gh/cshonglei/SelfHVD@main/images/Visualization/004_side_by_side.mp4" type="video/mp4" />
-          </video>
+      </div>
+      <div class="viz-content">
+        <div class="compare-labels">
+          <span>Blurry Video</span>
+          <span>SelfHVD</span>
         </div>
-        <div class="visualization-item">
-          <video controls preload="metadata">
-            <source src="https://cdn.jsdelivr.net/gh/cshonglei/SelfHVD@main/images/Visualization/008_side_by_side.mp4" type="video/mp4" />
-          </video>
+        <div class="visualization-figure" id="goproshake-videos">
+          <div class="visualization-item enlarged">
+            <video controls preload="metadata">
+              <source src="Visualization/rank002_006_start0039_score953_h264.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div class="visualization-item enlarged">
+            <video controls preload="metadata">
+              <source src="Visualization/rank006_008_start0030_score379_h264.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div class="visualization-item enlarged">
+            <video controls preload="metadata">
+              <source src="Visualization/rank016_002_start0000_score19_h264.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+        <div class="visualization-figure" id="hvd-videos" style="display: none;">
+          <div class="visualization-item">
+            <video controls preload="metadata">
+              <source src="https://cdn.jsdelivr.net/gh/cshonglei/SelfHVD@main/images/Visualization/002_side_by_side.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div class="visualization-item">
+            <video controls preload="metadata">
+              <source src="https://cdn.jsdelivr.net/gh/cshonglei/SelfHVD@main/images/Visualization/004_side_by_side.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div class="visualization-item">
+            <video controls preload="metadata">
+              <source src="https://cdn.jsdelivr.net/gh/cshonglei/SelfHVD@main/images/Visualization/008_side_by_side.mp4" type="video/mp4" />
+            </video>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="datasets-wrap">
+  <section class="datasets-wrap" id="datasets">
     <div class="datasets">
       <h2>Datasets</h2>
-      <div class="datasets-figure">
-        <img src="https://github.com/cshonglei/SelfHVD/blob/main/images/A.png?raw=true" alt="Synthetic dataset GoProShake" loading="lazy" />
+      <div class="viz-nav-wrap">
+        <div class="viz-nav-row">
+          <div class="viz-tab-group">
+            <button class="viz-tab active" data-ds-target="datasets-goproshake" type="button">GoProShake</button>
+            <button class="viz-tab" data-ds-target="datasets-hvd" type="button">HVD</button>
+          </div>
+        </div>
       </div>
-      <p class="datasets-caption">
-        Visualization of GoProShake dataset. The top and bottom are training and test videos, respectively. GoProShake takes into account the OIS technology on handheld video capture, synthesizing blurry videos (red boxes) that contain sharp frames (green boxes).
-      </p>
-      <div class="datasets-figure">
-        <img src="https://github.com/cshonglei/SelfHVD/blob/main/images/B.png?raw=true" alt="Real-world dataset HVD" loading="lazy" />
+      <div class="datasets-content">
+        <div class="datasets-panel" id="datasets-goproshake">
+          <div class="datasets-figure">
+            <img src="https://github.com/cshonglei/SelfHVD/blob/main/images/A.png?raw=true" alt="Synthetic dataset GoProShake" loading="lazy" />
+          </div>
+          <p class="datasets-caption">
+            Visualization of GoProShake dataset. The top and bottom are training and test videos, respectively. GoProShake takes into account the OIS technology on handheld video capture, synthesizing blurry videos (red boxes) that contain sharp frames (green boxes).
+          </p>
+        </div>
+        <div class="datasets-panel" id="datasets-hvd" hidden>
+          <div class="datasets-figure">
+            <img src="https://github.com/cshonglei/SelfHVD/blob/main/images/B.png?raw=true" alt="Real-world dataset HVD" loading="lazy" />
+          </div>
+          <p class="datasets-caption">
+            Visualization of HVD dataset. Sharp frames (green boxes) are present and reliable in most cases of handheld shooting scenarios.
+          </p>
+        </div>
       </div>
-      <p class="datasets-caption">
-        Visualization of HVD dataset. Sharp frames (green boxes) are present and reliable in most cases of handheld shooting scenarios.
-      </p>
     </div>
   </section>
 
@@ -435,5 +587,86 @@
 }</pre>
     </div>
   </section>
+  <script>
+    (function () {
+      function stabilizeDatasetsHeight() {
+        const container = document.querySelector(".datasets-content");
+        if (!container) return;
+
+        const panels = Array.from(container.querySelectorAll(".datasets-panel"));
+        if (!panels.length) return;
+
+        // Measure max height without changing layout permanently
+        const measurements = panels.map((panel) => {
+          const wasHidden = panel.hasAttribute("hidden");
+          if (wasHidden) panel.removeAttribute("hidden");
+
+          const prevPosition = panel.style.position;
+          const prevVisibility = panel.style.visibility;
+          const prevPointerEvents = panel.style.pointerEvents;
+
+          panel.style.position = "absolute";
+          panel.style.visibility = "hidden";
+          panel.style.pointerEvents = "none";
+          panel.style.inset = "0";
+
+          const h = panel.scrollHeight;
+
+          panel.style.position = prevPosition;
+          panel.style.visibility = prevVisibility;
+          panel.style.pointerEvents = prevPointerEvents;
+          panel.style.inset = "";
+
+          if (wasHidden) panel.setAttribute("hidden", "");
+          return h;
+        });
+
+        const maxH = Math.max(...measurements);
+        if (Number.isFinite(maxH) && maxH > 0) {
+          container.style.minHeight = `${maxH}px`;
+        }
+      }
+
+      const tabs = document.querySelectorAll(".viz-tab");
+      const groups = {
+        "goproshake-videos": document.getElementById("goproshake-videos"),
+        "hvd-videos": document.getElementById("hvd-videos")
+      };
+
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          const target = tab.getAttribute("data-target");
+          if (target) {
+            tabs.forEach((t) => {
+              if (t.getAttribute("data-target")) t.classList.remove("active");
+            });
+            tab.classList.add("active");
+            Object.keys(groups).forEach((key) => {
+              groups[key].style.display = key === target ? "flex" : "none";
+            });
+            return;
+          }
+
+          const dsTarget = tab.getAttribute("data-ds-target");
+          if (dsTarget) {
+            tabs.forEach((t) => {
+              if (t.getAttribute("data-ds-target")) t.classList.remove("active");
+            });
+            tab.classList.add("active");
+            const dsPanels = document.querySelectorAll(".datasets-panel");
+            dsPanels.forEach((p) => {
+              p.toggleAttribute("hidden", p.id !== dsTarget);
+            });
+            requestAnimationFrame(stabilizeDatasetsHeight);
+          }
+        });
+      });
+
+      // Initial stabilize (also after images load)
+      stabilizeDatasetsHeight();
+      window.addEventListener("resize", () => requestAnimationFrame(stabilizeDatasetsHeight));
+      window.addEventListener("load", () => requestAnimationFrame(stabilizeDatasetsHeight));
+    })();
+  </script>
 </body>
 </html>
