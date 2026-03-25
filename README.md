@@ -45,8 +45,6 @@ Shooting video with handheld shooting devices often results in blurry frames due
 ---
 -->
 
----
-
 ## 🗄️ Datasets
 
 <div align="center">
