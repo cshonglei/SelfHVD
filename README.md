@@ -1,17 +1,7 @@
-<div align="center">
-
-# SelfHVD: Self-Supervised Handheld Video Deblurring
-
-CVPR 2026
-
-[Honglei Xu](mailto:cshongleixu@gmail.com) · [Zhilu Zhang](mailto:cszlzhang@outlook.com) · [Junjie Fan](mailto:zhou93108@gmail.com) · [Xiaohe Wu](mailto:csxhwu@gmail.com) · [Wangmeng Zuo](mailto:wmzuo@hit.edu.cn)
-
-Harbin Institute of Technology
+# SelfHVD: Self-Supervised Handheld Video Deblurring (CVPR 2026)
 
 [![arXiv](https://img.shields.io/badge/arXiv-2508.08605-b31b1b.svg)](https://arxiv.org/abs/2508.08605)
 [![Project Page](https://img.shields.io/badge/Project-Page-green.svg)](https://cshonglei.github.io/SelfHVD/)
-
-</div>
 
 ---
 
