@@ -30,23 +30,25 @@ Shooting video with handheld shooting devices often results in blurry frames due
 
 ## 🎬 Visualization
 
-**Left: Blurry Input &nbsp;|&nbsp; Right: SelfHVD Output**
+<div align="center">
+
+*Left: Blurry Input &nbsp;·&nbsp; Right: SelfHVD Output*
 
 **GoProShake**
 
-![](https://github.com/cshonglei/SelfHVD/blob/main/images/Visualization/rank002_006_start0039_score953_h264.gif?raw=true)
+<img src="https://github.com/cshonglei/SelfHVD/blob/main/images/Visualization/rank002_006_start0039_score953_h264.gif?raw=true" width="100%"/>
+<img src="https://github.com/cshonglei/SelfHVD/blob/main/images/Visualization/rank006_008_start0030_score379_h264.gif?raw=true" width="100%"/>
+<img src="https://github.com/cshonglei/SelfHVD/blob/main/images/Visualization/rank016_002_start0000_score19_h264.gif?raw=true" width="100%"/>
 
-![](https://github.com/cshonglei/SelfHVD/blob/main/images/Visualization/rank006_008_start0030_score379_h264.gif?raw=true)
-
-![](https://github.com/cshonglei/SelfHVD/blob/main/images/Visualization/rank016_002_start0000_score19_h264.gif?raw=true)
+<br>
 
 **HVD**
 
-![](https://github.com/cshonglei/SelfHVD/blob/main/images/Visualization/002_side_by_side.gif?raw=true)
+<img src="https://github.com/cshonglei/SelfHVD/blob/main/images/Visualization/002_side_by_side.gif?raw=true" width="100%"/>
+<img src="https://github.com/cshonglei/SelfHVD/blob/main/images/Visualization/004_side_by_side.gif?raw=true" width="100%"/>
+<img src="https://github.com/cshonglei/SelfHVD/blob/main/images/Visualization/008_side_by_side.gif?raw=true" width="100%"/>
 
-![](https://github.com/cshonglei/SelfHVD/blob/main/images/Visualization/004_side_by_side.gif?raw=true)
-
-![](https://github.com/cshonglei/SelfHVD/blob/main/images/Visualization/008_side_by_side.gif?raw=true)
+</div>
 
 ---
 
