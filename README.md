@@ -45,17 +45,21 @@ Shooting video with handheld shooting devices often results in blurry frames due
 
 ## 🗄️ Datasets
 
-### GoProShake (Synthetic)
+### GoProShake (Synthetic) &nbsp; [[Download (Google Drive)](https://drive.google.com)]
+
+<div align="center">
 
 ![GoProShake](https://github.com/cshonglei/SelfHVD/blob/main/images/A.png?raw=true)
 
-[Download (Google Drive)](https://drive.google.com)
+</div>
 
-### HVD (Real-World)
+### HVD (Real-World) &nbsp; [[Download (Google Drive)](https://drive.google.com)]
+
+<div align="center">
 
 ![HVD](https://github.com/cshonglei/SelfHVD/blob/main/images/B.png?raw=true)
 
-[Download (Google Drive)](https://drive.google.com)
+</div>
 
 ---
 
