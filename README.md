@@ -48,7 +48,7 @@ HVD is a real-world handheld video dataset. Sharp frames (green boxes) are prese
 
 ---
 
-## 💻 Code & Models
+## 🏋️ Training
 
 Code and pre-trained models are coming soon.
 
