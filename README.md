@@ -64,13 +64,6 @@ We introduce two new datasets for handheld video deblurring:
 
 ![HVD](https://github.com/cshonglei/SelfHVD/blob/main/images/B.png?raw=true)
 
-### Download
-
-| Dataset | Link |
-|---------|------|
-| GoProShake | Coming soon |
-| HVD | Coming soon |
-
 ---
 
 ## 🏋️ Training
