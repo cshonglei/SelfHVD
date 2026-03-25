@@ -43,6 +43,8 @@ Shooting video with handheld shooting devices often results in blurry frames due
 
 **HVD**
 
+<table border="0"><tr><td align="center"><img width="480" height="1" src="https://raw.githubusercontent.com/cshonglei/SelfHVD/main/images/spacer.png"/>Blurry Video</td><td align="center"><img width="480" height="1" src="https://raw.githubusercontent.com/cshonglei/SelfHVD/main/images/spacer.png"/>SelfHVD</td></tr></table>
+
 <img src="https://github.com/cshonglei/SelfHVD/blob/main/images/Visualization/002_side_by_side.gif?raw=true" width="100%"/>
 <img src="https://github.com/cshonglei/SelfHVD/blob/main/images/Visualization/004_side_by_side.gif?raw=true" width="100%"/>
 <img src="https://github.com/cshonglei/SelfHVD/blob/main/images/Visualization/008_side_by_side.gif?raw=true" width="100%"/>
