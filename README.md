@@ -73,8 +73,6 @@ Code and pre-trained models are coming soon.
 
 ## 📖 Citation
 
-If you find this work useful, please cite our paper:
-
 ```bibtex
 @inproceedings{xu2026selfhvd,
   title={SelfHVD: Self-Supervised Handheld Video Deblurring},
