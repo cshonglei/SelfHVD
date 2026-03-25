@@ -2,7 +2,7 @@
 
 # SelfHVD: Self-Supervised Handheld Video Deblurring
 
-**CVPR 2026**
+CVPR 2026
 
 [Honglei Xu](mailto:cshongleixu@gmail.com) · [Zhilu Zhang](mailto:cszlzhang@outlook.com) · [Junjie Fan](mailto:zhou93108@gmail.com) · [Xiaohe Wu](mailto:csxhwu@gmail.com) · [Wangmeng Zuo](mailto:wmzuo@hit.edu.cn)
 
@@ -18,7 +18,7 @@ Harbin Institute of Technology
 
 ## Abstract
 
-Shooting video with handheld shooting devices often results in blurry frames due to shaking hands and other instability factors. Although previous video deblurring methods have achieved impressive progress, they still struggle to perform satisfactorily on real-world handheld video due to the blur domain gap between training and testing data. To address the issue, we propose a self-supervised method for handheld video deblurring, which is driven by sharp clues in the video. First, to train the deblurring model, we extract the sharp clues from the video and take them as misalignment labels of neighboring blurry frames. Second, to improve the deblurring ability of the model, we propose a novel **Self-Enhanced Video Deblurring (SEVD)** method to create higher-quality paired video data. Third, we propose a **Self-Constrained Spatial Consistency Maintenance (SCSCM)** method to regularize the model, preventing position shifts between the output and input frames. Moreover, we construct synthetic and real-world handheld video datasets for handheld video deblurring. Extensive experiments on these and other common real-world datasets demonstrate that our method significantly outperforms existing self-supervised ones.
+Shooting video with handheld shooting devices often results in blurry frames due to shaking hands and other instability factors. Although previous video deblurring methods have achieved impressive progress, they still struggle to perform satisfactorily on real-world handheld video due to the blur domain gap between training and testing data. To address the issue, we propose a self-supervised method for handheld video deblurring, which is driven by sharp clues in the video. First, to train the deblurring model, we extract the sharp clues from the video and take them as misalignment labels of neighboring blurry frames. Second, to improve the deblurring ability of the model, we propose a novel Self-Enhanced Video Deblurring (SEVD) method to create higher-quality paired video data. Third, we propose a Self-Constrained Spatial Consistency Maintenance (SCSCM) method to regularize the model, preventing position shifts between the output and input frames. Moreover, we construct synthetic and real-world handheld video datasets for handheld video deblurring. Extensive experiments on these and other common real-world datasets demonstrate that our method significantly outperforms existing self-supervised ones.
 
 ---
 
@@ -26,7 +26,7 @@ Shooting video with handheld shooting devices often results in blurry frames due
 
 ![Pipeline](https://github.com/cshonglei/SelfHVD/blob/main/images/pipeline.png?raw=true)
 
-Given a blurry video captured by a handheld shooting device, we first select the sharp frames and take them as misalignment labels. Then, **SEVD** constructs higher-quality paired training data to further improve the model performance. **SCSCM** is proposed to prevent position shifts between output and input frames.
+Given a blurry video captured by a handheld shooting device, we first select the sharp frames and take them as misalignment labels. Then, SEVD constructs higher-quality paired training data to further improve the model performance. SCSCM is proposed to prevent position shifts between output and input frames.
 
 ---
 
