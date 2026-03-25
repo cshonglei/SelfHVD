@@ -26,8 +26,6 @@ Shooting video with handheld shooting devices often results in blurry frames due
 
 ![Pipeline](https://github.com/cshonglei/SelfHVD/blob/main/images/pipeline.png?raw=true)
 
-Given a blurry video captured by a handheld shooting device, we first select the sharp frames and take them as misalignment labels. Then, SEVD constructs higher-quality paired training data to further improve the model performance. SCSCM is proposed to prevent position shifts between output and input frames.
-
 ---
 
 ## 🎬 Visualization
@@ -60,13 +58,9 @@ We introduce two new datasets for handheld video deblurring:
 
 ![GoProShake](https://github.com/cshonglei/SelfHVD/blob/main/images/A.png?raw=true)
 
-GoProShake takes into account the OIS technology on handheld video capture, synthesizing blurry videos (red boxes) that contain sharp frames (green boxes). The top and bottom rows are training and test videos, respectively.
-
 ### HVD (Real-World)
 
 ![HVD](https://github.com/cshonglei/SelfHVD/blob/main/images/B.png?raw=true)
-
-HVD is a real-world handheld video dataset. Sharp frames (green boxes) are present and reliable in most handheld shooting scenarios.
 
 ### Download
 
