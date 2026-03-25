@@ -31,7 +31,7 @@ Shooting video with handheld shooting devices often results in blurry frames due
 
 <div align="center">
 
-*Left: Blurry Input &nbsp;·&nbsp; Right: SelfHVD Output*
+<table width="100%"><tr><td align="center" width="50%">Blurry Video</td><td align="center" width="50%">SelfHVD</td></tr></table>
 
 **GoProShake**
 
