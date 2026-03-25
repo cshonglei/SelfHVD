@@ -33,7 +33,7 @@ Shooting video with handheld shooting devices often results in blurry frames due
 
 **GoProShake**
 
-<table border="0"><tr><td align="center"><img width="480" height="1" src="https://raw.githubusercontent.com/cshonglei/SelfHVD/main/images/spacer.png"/>Blurry Video</td><td align="center"><img width="480" height="1" src="https://raw.githubusercontent.com/cshonglei/SelfHVD/main/images/spacer.png"/>SelfHVD</td></tr></table>
+<img src="https://raw.githubusercontent.com/cshonglei/SelfHVD/main/images/compare_labels.png" width="100%"/>
 
 <img src="https://github.com/cshonglei/SelfHVD/blob/main/images/Visualization/rank002_006_start0039_score953_h264.gif?raw=true" width="100%"/>
 <img src="https://github.com/cshonglei/SelfHVD/blob/main/images/Visualization/rank006_008_start0030_score379_h264.gif?raw=true" width="100%"/>
@@ -43,7 +43,7 @@ Shooting video with handheld shooting devices often results in blurry frames due
 
 **HVD**
 
-<table border="0"><tr><td align="center"><img width="480" height="1" src="https://raw.githubusercontent.com/cshonglei/SelfHVD/main/images/spacer.png"/>Blurry Video</td><td align="center"><img width="480" height="1" src="https://raw.githubusercontent.com/cshonglei/SelfHVD/main/images/spacer.png"/>SelfHVD</td></tr></table>
+<img src="https://raw.githubusercontent.com/cshonglei/SelfHVD/main/images/compare_labels.png" width="100%"/>
 
 <img src="https://github.com/cshonglei/SelfHVD/blob/main/images/Visualization/002_side_by_side.gif?raw=true" width="100%"/>
 <img src="https://github.com/cshonglei/SelfHVD/blob/main/images/Visualization/004_side_by_side.gif?raw=true" width="100%"/>
