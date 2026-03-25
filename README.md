@@ -29,7 +29,7 @@ Shooting video with handheld shooting devices often results in blurry frames due
 <img src="https://github.com/cshonglei/SelfHVD/blob/main/images/Visualization/rank006_008_start0030_score379_h264.gif?raw=true" width="100%"/>
 <img src="https://github.com/cshonglei/SelfHVD/blob/main/images/Visualization/rank016_002_start0000_score19_h264.gif?raw=true" width="100%"/>
 
-<br><br>
+<br>
 
 <h3>HVD</h3>
 
