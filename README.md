@@ -56,17 +56,25 @@ Shooting video with handheld shooting devices often results in blurry frames due
 
 ## 🗄️ Datasets
 
-<div align="center">
-
 ### GoProShake (Synthetic) &nbsp; [[Download (Google Drive)](https://drive.google.com)]
+
+<div align="center">
 
 ![GoProShake](https://github.com/cshonglei/SelfHVD/blob/main/images/A.png?raw=true)
 
+</div>
+
+GoProShake takes into account the OIS technology on handheld video capture, synthesizing blurry videos (red boxes) that contain sharp frames (green boxes). The top and bottom rows are training and test videos, respectively.
+
 ### HVD (Real-World) &nbsp; [[Download (Google Drive)](https://drive.google.com)]
+
+<div align="center">
 
 ![HVD](https://github.com/cshonglei/SelfHVD/blob/main/images/B.png?raw=true)
 
 </div>
+
+HVD is a real-world handheld video dataset. Sharp frames (green boxes) are present and reliable in most handheld shooting scenarios.
 
 ---
 
