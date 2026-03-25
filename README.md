@@ -51,7 +51,7 @@ Overview of our SelfHVD. Given a blurry video captured by a handheld shooting de
 
 <div align="center">
 
-### [GoProShake](https://drive.google.com)
+### [GoProShake](https://github.com/cshonglei/SelfHVD)
 
 ![GoProShake](https://github.com/cshonglei/SelfHVD/blob/main/images/A.png?raw=true)
 
@@ -61,7 +61,7 @@ Visualization of GoProShake dataset. The top and bottom are training and test vi
 
 <div align="center">
 
-### [HVD](https://drive.google.com)
+### [HVD](https://github.com/cshonglei/SelfHVD)
 
 ![HVD](https://github.com/cshonglei/SelfHVD/blob/main/images/B.png?raw=true)
 
