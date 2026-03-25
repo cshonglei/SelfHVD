@@ -21,7 +21,7 @@ Shooting video with handheld shooting devices often results in blurry frames due
 
 <div align="center">
 
-**GoProShake**
+<h3>GoProShake</h3>
 
 <img src="https://raw.githubusercontent.com/cshonglei/SelfHVD/main/images/compare_labels.png" width="100%"/>
 
@@ -29,9 +29,9 @@ Shooting video with handheld shooting devices often results in blurry frames due
 <img src="https://github.com/cshonglei/SelfHVD/blob/main/images/Visualization/rank006_008_start0030_score379_h264.gif?raw=true" width="100%"/>
 <img src="https://github.com/cshonglei/SelfHVD/blob/main/images/Visualization/rank016_002_start0000_score19_h264.gif?raw=true" width="100%"/>
 
-<br>
+<br><br>
 
-**HVD**
+<h3>HVD</h3>
 
 <img src="https://raw.githubusercontent.com/cshonglei/SelfHVD/main/images/compare_labels.png" width="100%"/>
 
