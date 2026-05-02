@@ -116,7 +116,7 @@ data/test_videos/
         ...
 ```
 
-### 3. Running Inference
+### 3. Run Inference
 
 Download the pretrained checkpoint from [Google Drive](https://drive.google.com/file/d/1UWxS8MPrd5gpret_o-wz1vVjIcSciIMs/view?usp=drive_link). Save the file under this repository as `chkpts/pretrain.pth`, then run:
 
