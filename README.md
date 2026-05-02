@@ -132,6 +132,12 @@ Coming soon.
 
 ---
 
+## ✨ Acknowledgement
+
+This code is based on [BasicVSR++](https://github.com/ckkelvinchan/BasicVSR_PlusPlus) and [MMagic](https://github.com/open-mmlab/mmagic). Thanks for their awesome work!
+
+---
+
 ## 📖 Citation
 
 If you find this work useful, please cite our paper:
