@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SelfHVD: Self-Supervised Handheld Video Deblurring</title>
+  <meta name="description" content="Project page for SelfHVD: Self-Supervised Handheld Video Deblurring" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Inter', Arial, Helvetica, sans-serif;
+      background: #f0f0f0;
+      color: #374151;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .hero-wrap {
+      background: #f3f3f3;
+      padding: 18px 20px 52px;
+    }
+
+    .hero {
+      max-width: 860px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .title {
+      margin: 0;
+      font-size: 30px;
+      line-height: 1.08;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: #2f3743;
+    }
+
+    .authors {
+      margin-top: 20px;
+      font-size: 16px;
+      line-height: 1.45;
+      font-weight: 400;
+      color: #2f9bff;
+    }
+
+    .authors a {
+      color: #2f9bff;
+      text-decoration: none;
+    }
+
+    .authors sup,
+    .affiliation sup {
+      font-size: 70%;
+      vertical-align: super;
+    }
+
+    .authors sup { color: #2f3743; }
+
+    .affiliation {
+      margin-top: 2px;
+      font-size: 15px;
+      line-height: 1.5;
+      color: #4b5563;
+      font-weight: 400;
+    }
+
+    .venue-highlight {
+      color: #1d6fd0;
+      font-weight: 700;
+      font-size: 1.08em;
+      letter-spacing: 0.02em;
+    }
+
+    .buttons {
+      margin-top: 14px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      height: 34px;
+      padding: 0 15px;
+      border-radius: 999px;
+      text-decoration: none;
+      background: #333;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 500;
+      transition: transform .15s ease, background .15s ease;
+    }
+
+    .btn:hover {
+      background: #262626;
+      transform: translateY(-1px);
+    }
+
+    .btn i, .btn .emoji {
+      font-size: 13px;
+      line-height: 1;
+    }
+
+    .abstract-wrap {
+      background: #ececec;
+      padding: 28px 20px 32px;
+      border-top: 1px solid rgba(0,0,0,0.02);
+    }
+
+    .abstract {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .abstract h2,
+    .bibtex h2 {
+      margin: 0 0 12px;
+      text-align: center;
+      font-size: 28px;
+      line-height: 1.15;
+      font-weight: 600;
+      color: #3b4654;
+    }
+
+    .abstract p {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.72;
+      color: #4b5563;
+      text-align: left;
+    }
+
+    .overview-wrap {
+      background: #f3f3f3;
+      padding: 20px 20px 30px;
+      border-top: 1px solid rgba(0,0,0,0.02);
+    }
+
+    .overview {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .overview h2 {
+      margin: 0 0 12px;
+      text-align: center;
+      font-size: 28px;
+      line-height: 1.15;
+      font-weight: 600;
+      color: #3b4654;
+    }
+
+    .overview-figure {
+      margin-top: 8px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .overview-figure img {
+      width: min(1280px, 100%);
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.10);
+      background: #f8fafc;
+    }
+
+    .overview-caption {
+      margin: 10px auto 0;
+      max-width: 1280px;
+      font-size: 14px;
+      line-height: 1.7;
+      color: #4b5563;
+      text-align: left;
+    }
+
+    .datasets-wrap {
+      background: #f3f3f3;
+      padding: 20px 20px 30px;
+      border-top: 1px solid rgba(0,0,0,0.02);
+    }
+
+    .datasets {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .datasets h2 {
+      margin: 0 0 12px;
+      text-align: center;
+      font-size: 28px;
+      line-height: 1.15;
+      font-weight: 600;
+      color: #3b4654;
+    }
+
+    .datasets p {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.72;
+      color: #4b5563;
+      text-align: left;
+    }
+
+    .datasets-figure {
+      margin-top: 8px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .datasets-figure img {
+      width: min(1280px, 100%);
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.10);
+      background: #f8fafc;
+    }
+
+    .datasets-caption {
+      margin: 10px auto 0;
+      max-width: 1280px;
+      font-size: 14px;
+      line-height: 1.7;
+      color: #4b5563;
+      text-align: left;
+    }
+
+    .datasets-content {
+      width: 100%;
+      max-width: 1600px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .datasets-panel {
+      width: 100%;
+    }
+
+    .datasets-panel[hidden] {
+      display: none !important;
+    }
+
+    .visualization-wrap {
+      background: #f3f3f3;
+      padding: 20px 20px 30px;
+      border-top: 1px solid rgba(0,0,0,0.02);
+    }
+
+    .visualization {
+      max-width: 1600px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .visualization h2 {
+      margin: 0 0 12px;
+      text-align: center;
+      font-size: 28px;
+      line-height: 1.15;
+      font-weight: 600;
+      color: #3b4654;
+    }
+
+    .viz-nav-wrap {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      max-width: 1600px;
+      margin: 0 auto 16px;
+    }
+
+    .viz-nav-row {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      gap: 0;
+    }
+
+    .viz-tab-group {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: center;
+      gap: 56px;
+      width: auto;
+    }
+
+    .viz-tab {
+      margin: 0;
+      min-width: 210px;
+      height: 44px;
+      padding: 0 22px;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      border-radius: 4px;
+      background: #ffffff;
+      box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+      color: #aeb7c7;
+      font-family: inherit;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      text-align: center;
+      transition: box-shadow 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+    }
+
+    .viz-tab:hover:not(.active) {
+      box-shadow: 0 3px 10px rgba(15, 23, 42, 0.08);
+      color: #9aa6bb;
+    }
+
+    .viz-tab.active {
+      /* Keep same box metrics to prevent layout shift */
+      min-width: 210px;
+      height: 44px;
+      padding: 0 22px;
+      background: transparent;
+      border-color: transparent;
+      box-shadow: none;
+      color: #6b7c93;
+      font-weight: 600;
+    }
+
+    .viz-content {
+      width: 100%;
+      max-width: 1600px;
+      margin: 0 auto;
+    }
+
+    .compare-labels {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      width: min(1280px, 100%);
+      margin: 0 auto 10px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #3b4654;
+    }
+
+    .compare-labels span {
+      text-align: center;
+    }
+
+    .visualization-figure {
+      margin-top: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: nowrap;
+      width: 100%;
+    }
+
+    .visualization-figure video {
+      width: min(1280px, 100%);
+      max-width: 100%;
+      display: block;
+      margin: 0 auto;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.10);
+      background: #f8fafc;
+    }
+
+    .visualization-item {
+      width: min(1280px, 100%);
+      margin: 0 auto;
+    }
+
+    .visualization-item.enlarged {
+      width: min(1600px, 100%);
+      margin: 0 auto;
+    }
+
+    .bibtex-wrap {
+      background: #f3f3f3;
+      padding: 20px 20px 30px;
+    }
+
+    .bibtex {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    pre {
+      margin: 0;
+      padding: 18px 20px;
+      border-radius: 8px;
+      background: #e4e4e4;
+      color: #374151;
+      overflow-x: auto;
+      font-size: 16px;
+      line-height: 1.6;
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,0.06);
+    }
+
+    @media (max-width: 768px) {
+      .hero-wrap { padding: 20px 14px 42px; }
+      .title { font-size: 24px; }
+      .authors { font-size: 15px; }
+      .affiliation { font-size: 14px; }
+      .abstract-wrap { padding: 24px 16px 30px; }
+      .overview-wrap { padding: 18px 16px 28px; }
+      .datasets-wrap { padding: 18px 16px 28px; }
+      .bibtex-wrap { padding: 18px 16px 28px; }
+      .abstract h2, .bibtex h2 { font-size: 28px; }
+      .abstract p { font-size: 14px; }
+      .overview h2 { font-size: 28px; }
+      .datasets h2 { font-size: 28px; }
+      .datasets p { font-size: 14px; }
+      .datasets-caption { font-size: 14px; }
+      .visualization-wrap { padding: 18px 16px 28px; }
+      .visualization h2 { font-size: 28px; }
+      .visualization-figure { flex-wrap: wrap; }
+      .visualization-figure video { width: 100%; max-width: 100%; }
+      .viz-nav-wrap { margin-bottom: 12px; }
+      .viz-tab-group { gap: 28px; }
+      .viz-tab { min-width: 150px; height: 40px; font-size: 14px; }
+      .viz-tab.active { min-width: 150px; height: 40px; padding: 0 22px; }
+      .compare-labels { font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero-wrap">
+    <div class="hero">
+      <h1 class="title">SelfHVD: Self-Supervised Handheld Video Deblurring</h1>
+
+      <div class="authors">
+        <a href="mailto:cshongleixu@gmail.com">Honglei Xu</a>,
+        <a href="mailto:cszlzhang@outlook.com">Zhilu Zhang</a>,
+        <a href="mailto:zhou93108@gmail.com">Junjie Fan</a>,
+        <a href="mailto:csxhwu@gmail.com">Xiaohe Wu</a>,
+        <a href="mailto:wmzuo@hit.edu.cn">Wangmeng Zuo</a>
+      </div>
+
+      <div class="affiliation">Harbin Institute of Technology</div>
+      <div class="affiliation"><span class="venue-highlight">CVPR 2026</span></div>
+
+      
+      <div class="buttons">
+        <a class="btn" href="https://arxiv.org/abs/2508.08605" target="_blank" rel="noopener noreferrer">
+          <i class="fa-solid fa-wand-magic-sparkles"></i><span>arXiv</span>
+        </a>
+        <a class="btn" href="https://arxiv.org/pdf/2508.08605.pdf" target="_blank" rel="noopener noreferrer">
+          <i class="fa-regular fa-file-pdf"></i><span>Paper</span>
+        </a>
+        <a class="btn" href="https://github.com/cshonglei/SelfHVD" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-github"></i><span>Code</span>
+        </a>
+        <a class="btn" href="https://github.com/cshonglei/SelfHVD#datasets" target="_blank" rel="noopener noreferrer">
+          <i class="fa-solid fa-database"></i><span>Dataset</span>
+        </a>
+        <a class="btn" href="#bibtex">
+          <i class="fa-solid fa-book"></i><span>BibTeX</span>
+        </a>
+      </div>
+    </div>
+  </section>
+<section class="abstract-wrap">
+    <div class="abstract">
+      <h2>Abstract</h2>
+      <p>
+        Shooting video with handheld shooting devices often results in blurry frames due to shaking hands and other instability factors. Although previous video deblurring methods have achieved impressive progress, they still struggle to perform satisfactorily on real-world handheld video due to the blur domain gap between training and testing data. To address the issue, we propose a self-supervised method for handheld video deblurring, which is driven by sharp clues in the video. First, to train the deblurring model, we extract the sharp clues from the video and take them as misalignment labels of neighboring blurry frames. Second, to improve the deblurring ability of the model, we propose a novel Self-Enhanced Video Deblurring (SEVD) method to create higher-quality paired video data. Third, we propose a Self-Constrained Spatial Consistency Maintenance (SCSCM) method to regularize the model, preventing position shifts between the output and input frames. Moreover, we construct synthetic and real-world handheld video datasets for handheld video deblurring. Extensive experiments on these and other common real-world datasets demonstrate that our method significantly outperforms existing self-supervised ones.
+      </p>
+    </div>
+  </section>
+
+  <section class="overview-wrap">
+    <div class="overview">
+      <h2>Overview</h2>
+      <div class="overview-figure">
+        <img src="https://github.com/cshonglei/SelfHVD/blob/main/images/pipeline.png?raw=true" alt="SelfHVD pipeline overview" loading="lazy" />
+      </div>
+      <p class="overview-caption">
+        Overview of our SelfHVD. Given a blurry video captured by a handheld shooting device, we first select the sharp frames and take them as misalignment labels. Then, Self-Enhanced Video Deblurring (SEVD) constructs higher-quality paired training data to further improve the model performance. Self-Constrained Spatial Consistency Maintenance (SCSCM) is proposed to prevent position shifts between output and input frames.
+      </p>
+    </div>
+  </section>
+
+  <section class="visualization-wrap" id="visualization">
+    <div class="visualization">
+      <h2>Visualization</h2>
+      <div class="viz-nav-wrap">
+        <div class="viz-nav-row">
+          <div class="viz-tab-group">
+            <button class="viz-tab active" data-target="goproshake-videos" type="button">GoProShake</button>
+            <button class="viz-tab" data-target="hvd-videos" type="button">HVD</button>
+          </div>
+        </div>
+      </div>
+      <div class="viz-content">
+        <div class="compare-labels">
+          <span>Blurry Video</span>
+          <span>SelfHVD</span>
+        </div>
+        <div class="visualization-figure" id="goproshake-videos">
+          <div class="visualization-item enlarged">
+            <video controls preload="metadata">
+              <source src="https://cdn.jsdelivr.net/gh/cshonglei/SelfHVD@main/images/Visualization/rank002_006_start0039_score953_h264.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div class="visualization-item enlarged">
+            <video controls preload="metadata">
+              <source src="https://cdn.jsdelivr.net/gh/cshonglei/SelfHVD@main/images/Visualization/rank006_008_start0030_score379_h264.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div class="visualization-item enlarged">
+            <video controls preload="metadata">
+              <source src="https://cdn.jsdelivr.net/gh/cshonglei/SelfHVD@main/images/Visualization/rank016_002_start0000_score19_h264.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+        <div class="visualization-figure" id="hvd-videos" style="display: none;">
+          <div class="visualization-item">
+            <video controls preload="metadata">
+              <source src="https://cdn.jsdelivr.net/gh/cshonglei/SelfHVD@main/images/Visualization/002_side_by_side.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div class="visualization-item">
+            <video controls preload="metadata">
+              <source src="https://cdn.jsdelivr.net/gh/cshonglei/SelfHVD@main/images/Visualization/004_side_by_side.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div class="visualization-item">
+            <video controls preload="metadata">
+              <source src="https://cdn.jsdelivr.net/gh/cshonglei/SelfHVD@main/images/Visualization/008_side_by_side.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="datasets-wrap" id="datasets">
+    <div class="datasets">
+      <h2>Datasets</h2>
+      <div class="viz-nav-wrap">
+        <div class="viz-nav-row">
+          <div class="viz-tab-group">
+            <button class="viz-tab active" data-ds-target="datasets-goproshake" type="button">GoProShake</button>
+            <button class="viz-tab" data-ds-target="datasets-hvd" type="button">HVD</button>
+          </div>
+        </div>
+      </div>
+      <div class="datasets-content">
+        <div class="datasets-panel" id="datasets-goproshake">
+          <div class="datasets-figure">
+            <img src="https://github.com/cshonglei/SelfHVD/blob/main/images/A.png?raw=true" alt="Synthetic dataset GoProShake" loading="lazy" />
+          </div>
+          <p class="datasets-caption">
+            Visualization of GoProShake dataset. The top and bottom are training and test videos, respectively. GoProShake takes into account the OIS technology on handheld video capture, synthesizing blurry videos (red boxes) that contain sharp frames (green boxes).
+          </p>
+        </div>
+        <div class="datasets-panel" id="datasets-hvd" hidden>
+          <div class="datasets-figure">
+            <img src="https://github.com/cshonglei/SelfHVD/blob/main/images/B.png?raw=true" alt="Real-world dataset HVD" loading="lazy" />
+          </div>
+          <p class="datasets-caption">
+            Visualization of HVD dataset. Sharp frames (green boxes) are present and reliable in most cases of handheld shooting scenarios.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bibtex-wrap" id="bibtex">
+    <div class="bibtex">
+      <h2>BibTeX</h2>
+      <pre>@inproceedings{xu2025selfhvd,
+  title={SelfHVD: Self-Supervised Handheld Video Deblurring},
+  author={Xu, Honglei and Zhang, Zhilu and Fan, Junjie and Wu, Xiaohe and Zuo, Wangmeng},
+  booktitle={CVPR},
+  year={2026}
+}</pre>
+    </div>
+  </section>
+  <script>
+    (function () {
+      function stabilizeDatasetsHeight() {
+        const container = document.querySelector(".datasets-content");
+        if (!container) return;
+
+        const panels = Array.from(container.querySelectorAll(".datasets-panel"));
+        if (!panels.length) return;
+
+        // Measure max height without changing layout permanently
+        const measurements = panels.map((panel) => {
+          const wasHidden = panel.hasAttribute("hidden");
+          if (wasHidden) panel.removeAttribute("hidden");
+
+          const prevPosition = panel.style.position;
+          const prevVisibility = panel.style.visibility;
+          const prevPointerEvents = panel.style.pointerEvents;
+
+          panel.style.position = "absolute";
+          panel.style.visibility = "hidden";
+          panel.style.pointerEvents = "none";
+          panel.style.inset = "0";
+
+          const h = panel.scrollHeight;
+
+          panel.style.position = prevPosition;
+          panel.style.visibility = prevVisibility;
+          panel.style.pointerEvents = prevPointerEvents;
+          panel.style.inset = "";
+
+          if (wasHidden) panel.setAttribute("hidden", "");
+          return h;
+        });
+
+        const maxH = Math.max(...measurements);
+        if (Number.isFinite(maxH) && maxH > 0) {
+          container.style.minHeight = `${maxH}px`;
+        }
+      }
+
+      const tabs = document.querySelectorAll(".viz-tab");
+      const groups = {
+        "goproshake-videos": document.getElementById("goproshake-videos"),
+        "hvd-videos": document.getElementById("hvd-videos")
+      };
+
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          const target = tab.getAttribute("data-target");
+          if (target) {
+            tabs.forEach((t) => {
+              if (t.getAttribute("data-target")) t.classList.remove("active");
+            });
+            tab.classList.add("active");
+            Object.keys(groups).forEach((key) => {
+              groups[key].style.display = key === target ? "flex" : "none";
+            });
+            return;
+          }
+
+          const dsTarget = tab.getAttribute("data-ds-target");
+          if (dsTarget) {
+            tabs.forEach((t) => {
+              if (t.getAttribute("data-ds-target")) t.classList.remove("active");
+            });
+            tab.classList.add("active");
+            const dsPanels = document.querySelectorAll(".datasets-panel");
+            dsPanels.forEach((p) => {
+              p.toggleAttribute("hidden", p.id !== dsTarget);
+            });
+            requestAnimationFrame(stabilizeDatasetsHeight);
+          }
+        });
+      });
+
+      // Initial stabilize (also after images load)
+      stabilizeDatasetsHeight();
+      window.addEventListener("resize", () => requestAnimationFrame(stabilizeDatasetsHeight));
+      window.addEventListener("load", () => requestAnimationFrame(stabilizeDatasetsHeight));
+    })();
+  </script>
+</body>
+</html>
