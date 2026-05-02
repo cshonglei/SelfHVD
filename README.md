@@ -73,9 +73,62 @@ Visualization of HVD dataset. Sharp frames (green boxes) are present and reliabl
 
 ---
 
+## 🚀 Quick Start
+
+### 1. Installation
+
+Prepare an environment with **PyTorch** from [pytorch.org](https://pytorch.org/). If you are experienced with PyTorch and have already installed it, just skip this part and jump to the next section.
+
+<pre style="overflow-x: auto; max-width: 100%; white-space: pre;"><code class="language-bash">conda create --name selfhvd python=3.8 -y
+conda activate selfhvd
+conda install pytorch torchvision cudatoolkit=11.3 -c pytorch</code></pre>
+
+Install **MMCV-full** (must match your PyTorch and CUDA). Using [OpenMIM](https://github.com/open-mmlab/mim) is recommended.
+
+   ```bash
+   pip install -U openmim
+   mim install mmcv-full
+   ```
+
+Clone repository and install it.
+
+   ```bash
+   git clone https://github.com/cshonglei/SelfHVD.git
+   cd SelfHVD
+   pip install -v -e .
+   ```
+
+### 2. Prepare Data
+
+Put `.mp4` files under `data/`, then run:
+
+```bash
+python data/videos2images.py
+```
+
+Then **`data/test_videos/`** has a folder **with the same name as each video**. All frames from that video are saved in that folder as `00000000.png`, `00000001.png`, …; for example, `000.mp4` is unpacked to `data/test_videos/000/`.
+
+```text
+data/test_videos/
+  └── 000/
+        00000000.png
+        00000001.png
+        ...
+```
+
+### 3. Running Inference
+
+Download the pretrained checkpoint from [Google Drive](https://drive.google.com/file/d/1UWxS8MPrd5gpret_o-wz1vVjIcSciIMs/view?usp=drive_link). Save the file under this repository as `chkpts/pretrain.pth`, then run:
+
+<pre style="overflow-x: auto; max-width: 100%; white-space: pre;"><code class="language-bash">python tools/test.py configs/basicvsr_plusplus_deblur.py chkpts/pretrain.pth --save-path demo/test_result</code></pre>
+
+Restored frames are written under `demo/test_result/` by default. Change `--save-path` to any directory you want outputs saved under.
+
+---
+
 ## 🏋️ Training
 
-Code and pre-trained models are coming soon.
+Coming soon.
 
 ---
 
