@@ -106,7 +106,7 @@ Put `.mp4` files under `data/`, then run:
 python data/videos2images.py
 ```
 
-Then **`data/test_videos/`** has a folder **with the same name as each video**. All frames from that video are saved in that folder as `00000000.png`, `00000001.png`, …; for example, `000.mp4` is unpacked to `data/test_videos/000/`.
+Then `data/test_videos/` has a folder with the same name as each video. All frames from that video are saved in that folder as `00000000.png`, `00000001.png`, …; for example, `000.mp4` is unpacked to `data/test_videos/000/`.
 
 ```text
 data/test_videos/
