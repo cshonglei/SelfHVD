@@ -10,6 +10,20 @@ from scipy.special import gamma
 from mmedit.datasets.pipelines.matlab_like_resize import MATLABLikeResize
 from .metric_utils import gauss_gradient
 
+# new import
+import torch
+import pyiqa
+
+device = torch.device("cuda")
+iqa_metric = pyiqa.create_metric('lpips', device=device)
+print('lpips', iqa_metric.lower_better)
+
+iqa_model_mus = pyiqa.create_metric('musiq', device=device) 
+print('musiq', iqa_model_mus.lower_better)
+
+iqa_model_man = pyiqa.create_metric('maniqa', device=device)
+print('maniqa', iqa_model_man.lower_better)
+
 
 def sad(alpha, trimap, pred_alpha):
     if alpha.ndim != 2 or trimap.ndim != 2 or pred_alpha.ndim != 2:
@@ -166,7 +180,66 @@ def reorder_image(img, input_order='HWC'):
         img = img.transpose(1, 2, 0)
     return img
 
+def musiq(img1, img2, crop_border=0, input_order='HWC', convert_to=None):
+    assert img1.shape == img2.shape, (
+        f'Image shapes are different: {img1.shape}, {img2.shape}.')
+    if input_order not in ['HWC', 'CHW']:
+        raise ValueError(
+            f'Wrong input_order {input_order}. Supported input_orders are '
+            '"HWC" and "CHW"')
+    img1 = reorder_image(img1, input_order=input_order)
+    img2 = reorder_image(img2, input_order=input_order)
 
+    img1, img2 = img1.astype(np.float32), img2.astype(np.float32)
+    if isinstance(convert_to, str) and convert_to.lower() == 'y':
+        img1 = mmcv.bgr2ycbcr(img1 / 255., y_only=True) * 255.
+        img2 = mmcv.bgr2ycbcr(img2 / 255., y_only=True) * 255.
+    elif convert_to is not None:
+        raise ValueError('Wrong color model. Supported values are '
+                         '"Y" and None.')
+
+    if crop_border != 0:
+        img1 = img1[crop_border:-crop_border, crop_border:-crop_border, None]
+        img2 = img2[crop_border:-crop_border, crop_border:-crop_border, None]
+
+    img1 = torch.from_numpy(img1[..., ::-1].transpose(2, 0, 1) / 255.).unsqueeze(0) # pred
+    score_mus = iqa_model_mus(img1)
+    torch.cuda.empty_cache()
+    
+    result = score_mus.item()
+    print('musiq:', result)
+    return result
+
+def maniqa(img1, img2, crop_border=0, input_order='HWC', convert_to=None):
+    assert img1.shape == img2.shape, (
+        f'Image shapes are different: {img1.shape}, {img2.shape}.')
+    if input_order not in ['HWC', 'CHW']:
+        raise ValueError(
+            f'Wrong input_order {input_order}. Supported input_orders are '
+            '"HWC" and "CHW"')
+    img1 = reorder_image(img1, input_order=input_order)
+    img2 = reorder_image(img2, input_order=input_order)
+
+    img1, img2 = img1.astype(np.float32), img2.astype(np.float32)
+    if isinstance(convert_to, str) and convert_to.lower() == 'y':
+        img1 = mmcv.bgr2ycbcr(img1 / 255., y_only=True) * 255.
+        img2 = mmcv.bgr2ycbcr(img2 / 255., y_only=True) * 255.
+    elif convert_to is not None:
+        raise ValueError('Wrong color model. Supported values are '
+                         '"Y" and None.')
+
+    if crop_border != 0:
+        img1 = img1[crop_border:-crop_border, crop_border:-crop_border, None]
+        img2 = img2[crop_border:-crop_border, crop_border:-crop_border, None]
+
+    img1 = torch.from_numpy(img1[..., ::-1].transpose(2, 0, 1) / 255.).unsqueeze(0) # pred
+    score_man = iqa_model_man(img1)
+    torch.cuda.empty_cache()
+    
+    result = score_man.item()
+    print('maniqa:', result)
+    return result
+    
 def psnr(img1, img2, crop_border=0, input_order='HWC', convert_to=None):
     """Calculate PSNR (Peak Signal-to-Noise Ratio).
 
