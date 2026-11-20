@@ -15,7 +15,7 @@ model = dict(
 
 # model training and testing settings
 train_cfg = dict(fix_iter=5000)
-test_cfg = dict(metrics=[], crop_border=0)
+test_cfg = dict(metrics=[MUSIQ, MANIQA], crop_border=0)
 
 # dataset settings
 train_dataset_type = 'SRFolderMultipleGTDataset'
